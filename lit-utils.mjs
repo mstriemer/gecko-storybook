@@ -117,7 +117,6 @@ export class MozLitElement extends LitElement {
 
   static get useChromeStylesheet() {
     return (
-      typeof XULElement != "undefined" ||
       typeof AppConstants != "undefined" ||
       (typeof Cu != "undefined" && Cu.isInAutomation)
     );

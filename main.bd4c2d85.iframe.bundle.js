@@ -61353,7 +61353,6 @@ class MozLitElement extends _vendor_lit_all_mjs__WEBPACK_IMPORTED_MODULE_0__.Lit
 
   static get useChromeStylesheet() {
     return (
-      typeof XULElement != "undefined" ||
       typeof AppConstants != "undefined" ||
       (typeof Cu != "undefined" && Cu.isInAutomation)
     );
@@ -66439,4 +66438,4 @@ module.exports = JSON.parse('{"amp":"&","apos":"\'","gt":">","lt":"<","quot":"\\
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=main.6070ec40.iframe.bundle.js.map
+//# sourceMappingURL=main.bd4c2d85.iframe.bundle.js.map
