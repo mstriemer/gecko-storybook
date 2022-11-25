@@ -59502,6 +59502,7 @@ var _marked = /*#__PURE__*/_regeneratorRuntime().mark(generateBundles);
 
 
 
+window.useRelativeStylesheets = true;
 
 // Base Fluent set up.
 var storybookBundle = new _fluent_bundle__WEBPACK_IMPORTED_MODULE_25__.FluentBundle("en-US");
@@ -61338,24 +61339,17 @@ class MozLitElement extends _vendor_lit_all_mjs__WEBPACK_IMPORTED_MODULE_0__.Lit
 
   /**
    * The URL for this component's styles. To make development in Storybook
-   * easier this will use the chrome:// URL when in product (feature detected
-   * by AppConstants existing) and a relative path for Storybook.
+   * easier this will use the chrome:// URL when in product and a relative path
+   * for Storybook.
    *
    * LOCAL_NAME should be the kebab-cased name of the element. It is added by
    * the `./mach addwidget` command.
    */
   static get stylesheetUrl() {
-    if (this.useChromeStylesheet) {
-      return `chrome://global/content/elements/${this.LOCAL_NAME}.css`;
+    if (window.useRelativeStylesheets) {
+      return `./${this.LOCAL_NAME}/${this.LOCAL_NAME}.css`;
     }
-    return `./${this.LOCAL_NAME}/${this.LOCAL_NAME}.css`;
-  }
-
-  static get useChromeStylesheet() {
-    return (
-      typeof AppConstants != "undefined" ||
-      (typeof Cu != "undefined" && Cu.isInAutomation)
-    );
+    return `chrome://global/content/elements/${this.LOCAL_NAME}.css`;
   }
 
   connectedCallback() {
@@ -66438,4 +66432,4 @@ module.exports = JSON.parse('{"amp":"&","apos":"\'","gt":">","lt":"<","quot":"\\
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=main.bd4c2d85.iframe.bundle.js.map
+//# sourceMappingURL=main.e0c803b3.iframe.bundle.js.map
